@@ -10,13 +10,12 @@ const config = {
   // messagingSenderId: "594021649148",
   // appId: "1:594021649148:web:27a69b66a9873bce"
 
-  apiKey: process.env.DEPLOY_FIREBASE_API_KEY,
-  authDomain: process.env.DEPLOY_FIREBASE_AUTH_DOMAIN,
-  databaseURL: process.env.DEPLOY_FIREBASE_DATABASE_URL,
-  projectId: process.env.DEPLOY_FIREBASE_PROJECT_ID,
-  storageBucket: process.env.DEPLOY_FIREBASE_STORAGE_BUCKET,
-  messagingSenderId: process.env.DEPLOY_FIREBASE_MESSAGING_SENDER_ID,
-  appId: process.env.DEPLOY_FIREBASE_APP_ID
+  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+  databaseURL: process.env.REACT_APP_FIREBASE_DATABASE_URL,
+  projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID
 };
 
 var fire = firebase.initializeApp(config);

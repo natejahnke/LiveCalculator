@@ -1,5 +1,5 @@
 import React from "react";
-import Display from "./Display";
+import Results from "./Results";
 import Numpad from "./Numpad";
 
 export default class Calculator extends React.Component {
@@ -52,7 +52,7 @@ export default class Calculator extends React.Component {
   render() {
     return (
       <div className="calculator">
-        <Display display={this.state.result} />
+        <Results result={this.state.result} />
         <Numpad onClick={this.onClick} />
       </div>
     );

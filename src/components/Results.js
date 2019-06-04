@@ -1,5 +1,5 @@
 import React from "react";
 
-const Results = props => <div className="results-display">3124</div>;
+const Results = props => <div className="results-display">{props.result}</div>;
 
 export default Results;

@@ -27,13 +27,6 @@ export default class Calculator extends React.Component {
   };
 
   pushResults = () => {
-    // this.setState({
-    //   resultsList: [
-    //     ...this.state.resultsList,
-    //     this.state.result + "=" + eval(this.state.result)
-    //   ]
-    // const pushCalc = fire.database().ref('results');
-    // const item = this.
     fire
       .database()
       .ref()
@@ -45,7 +38,6 @@ export default class Calculator extends React.Component {
     await this.compute();
     await this.clear();
     await this.pullResultsList();
-    // throw new Error("oops");
   };
 
   clear = () => {
@@ -118,12 +110,7 @@ export default class Calculator extends React.Component {
     this.pullResultsList();
   }
 
-  //   componentDidMount() {
-  //     this.pullResultsList();
-  //   }
-
   pullResultsList = () => {
-    /* Create reference to messages in Firebase Database */
     this.setState({
       resultsList: []
     });
@@ -134,8 +121,6 @@ export default class Calculator extends React.Component {
       .limitToLast(10);
 
     messagesRef.on("child_added", snapshot => {
-      /* Update React state when message is added at Firebase Database */
-
       let message = { text: snapshot.val(), id: snapshot.key };
 
       this.setState({ resultsList: [message].concat(this.state.resultsList) });
@@ -145,10 +130,13 @@ export default class Calculator extends React.Component {
   render() {
     return (
       <React.Fragment>
+        <div className="header">Nate's Calculator</div>
         <div className="container">
-          <div className="calculator">
-            <Results result={this.state.result} />
-            <Numpad onClick={this.onClick} />
+          <div className="calculator-container">
+            <div className="calculator">
+              <Results result={this.state.result} />
+              <Numpad onClick={this.onClick} />
+            </div>
           </div>
           <div className="list">
             {this.state.resultsList.slice(0, 10).map((list, index) => (

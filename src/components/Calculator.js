@@ -1,6 +1,7 @@
 import React from "react";
 import Results from "./Results";
 import Numpad from "./Numpad";
+import HistoryList from "./HistoryList";
 import fire from "../firebase";
 
 export default class Calculator extends React.Component {
@@ -66,6 +67,46 @@ export default class Calculator extends React.Component {
       this.calculate();
     } else if (e === "del") {
       this.delete();
+    } else if (e === "1" || e.keyCode === 97 || e.keyCode === 49) {
+      this.setState({
+        result: this.state.result + e
+      });
+    } else if (e === "2" || e.keyCode === 98 || e.keyCode === 50) {
+      this.setState({
+        result: this.state.result + e
+      });
+    } else if (e === "3" || e.keyCode === 99 || e.keyCode === 51) {
+      this.setState({
+        result: this.state.result + e
+      });
+    } else if (e === "4" || e.keyCode === 100 || e.keyCode === 52) {
+      this.setState({
+        result: this.state.result + e
+      });
+    } else if (e === "5" || e.keyCode === 101 || e.keyCode === 53) {
+      this.setState({
+        result: this.state.result + e
+      });
+    } else if (e === "6" || e.keyCode === 102 || e.keyCode === 54) {
+      this.setState({
+        result: this.state.result + e
+      });
+    } else if (e === "7" || e.keyCode === 103 || e.keyCode === 55) {
+      this.setState({
+        result: this.state.result + e
+      });
+    } else if (e === "8" || e.keyCode === 104 || e.keyCode === 56) {
+      this.setState({
+        result: this.state.result + e
+      });
+    } else if (e === "9" || e.keyCode === 105 || e.keyCode === 57) {
+      this.setState({
+        result: this.state.result + e
+      });
+    } else if (e === "0" || e.keyCode === 96 || e.keyCode === 48) {
+      this.setState({
+        result: this.state.result + e
+      });
     } else {
       this.setState({
         result: this.state.result + e
@@ -103,10 +144,17 @@ export default class Calculator extends React.Component {
 
   render() {
     return (
-      <div className="calculator">
-        <Results result={this.state.result} />
-        <Numpad onClick={this.onClick} />
-      </div>
+      <React.Fragment>
+        <div className="calculator">
+          <Results result={this.state.result} />
+          <Numpad onClick={this.onClick} />
+        </div>
+        <div className="list">
+          {this.state.resultsList.map(list => (
+            <HistoryList history={list.text} />
+          ))}
+        </div>
+      </React.Fragment>
     );
   }
 }

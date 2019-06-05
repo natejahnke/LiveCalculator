@@ -63,6 +63,10 @@ body {
   background-color: blue;
 }
 
+.history {
+  color: black;
+  font-size: 3rem;
+}
 /* Calculator Grid */
 
 .grid-container {

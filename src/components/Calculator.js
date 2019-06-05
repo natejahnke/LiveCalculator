@@ -151,7 +151,7 @@ export default class Calculator extends React.Component {
             <Numpad onClick={this.onClick} />
           </div>
           <div className="list">
-            {this.state.resultsList.map((list, index) => (
+            {this.state.resultsList.slice(0, 10).map((list, index) => (
               <HistoryList
                 key={index + 1}
                 order={index + 1}

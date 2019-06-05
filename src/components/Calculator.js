@@ -145,14 +145,20 @@ export default class Calculator extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <div className="calculator">
-          <Results result={this.state.result} />
-          <Numpad onClick={this.onClick} />
-        </div>
-        <div className="list">
-          {this.state.resultsList.map(list => (
-            <HistoryList history={list.text} />
-          ))}
+        <div className="container">
+          <div className="calculator">
+            <Results result={this.state.result} />
+            <Numpad onClick={this.onClick} />
+          </div>
+          <div className="list">
+            {this.state.resultsList.map((list, index) => (
+              <HistoryList
+                key={index + 1}
+                order={index + 1}
+                history={list.text}
+              />
+            ))}
+          </div>
         </div>
       </React.Fragment>
     );

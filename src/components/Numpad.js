@@ -14,14 +14,14 @@ const Numpad = props => (
       name="del"
       onClick={e => props.onClick(e.target.name)}
     >
-      del
+      <i className="fas fa-backspace" />
     </button>
     <button
       className="divide"
       name="/"
       onClick={e => props.onClick(e.target.name)}
     >
-      /
+      <i class="fas fa-divide" />
     </button>
 
     <button
@@ -50,7 +50,7 @@ const Numpad = props => (
       name="*"
       onClick={e => props.onClick(e.target.name)}
     >
-      x
+      <i class="fas fa-times" />
     </button>
 
     <button
@@ -79,7 +79,7 @@ const Numpad = props => (
       name="-"
       onClick={e => props.onClick(e.target.name)}
     >
-      -
+      <i class="fas fa-minus" />
     </button>
 
     <button
@@ -108,7 +108,7 @@ const Numpad = props => (
       name="+"
       onClick={e => props.onClick(e.target.name)}
     >
-      +
+      <i class="fas fa-plus" />
     </button>
 
     <button
@@ -130,7 +130,7 @@ const Numpad = props => (
       name="="
       onClick={e => props.onClick(e.target.name)}
     >
-      =
+      <i class="fas fa-equals" />
     </button>
   </div>
 );

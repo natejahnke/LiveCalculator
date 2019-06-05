@@ -1,3 +1,6 @@
+/* Font */
+@import url("https://fonts.googleapis.com/css?family=Didact+Gothic&display=swap");
+
 *,
 *::after,
 *::before {
@@ -8,12 +11,16 @@
 
 html {
   font-size: 62.5%;
-  font-family: sans-serif;
+  font-family: "Didact Gothic", sans-serif;
 }
 
 body {
   font-family: inherit;
   background-color: #282828;
+}
+
+i {
+  pointer-events: none;
 }
 
 .header {
@@ -29,52 +36,39 @@ body {
 
 .App {
   color: white;
-  /* height: 100vh; */
-  /* width: 100%; */
   background-color: #282828;
   background-size: cover;
-  /* display: flex;
-  justify-content: center; */
   align-items: center;
 }
 
 .calculator {
-  /* height: 80vh; */
-  /* width: 25%; */
   box-shadow: 0 2rem 4rem var(--shadow);
-  background-color: #201c29;
   margin-bottom: 1rem;
 }
 
 .results-display {
   height: 19vh;
-  font-size: 8rem;
-  font-weight: 600;
-  /* To display the value at the bottom-right of the container */
+  font-family: "Major Mono Display", monospace;
+  font-size: 4rem;
+  background-color: #373737;
+  border: 2px solid whitesmoke;
   display: flex;
-  justify-content: flex-end;
-  align-items: flex-end;
-}
-
-.results-display {
-  /* height: 25vh; */
-  /* width: 100%; */
+  justify-content: center;
+  align-items: center;
   padding: 0 2rem;
   overflow: hidden;
   white-space: no-wrap;
-  color: white;
-  font-size: 6rem;
-  /* background-color: blue; */
+  color: whitesmoke;
 }
 
 .history {
-  color: black;
+  color: whitesmoke;
   font-size: 3rem;
   padding: 1rem;
   text-align: center;
   margin: 10px auto;
-  /* padding: 10px; */
-  border: 1px solid #bbb;
+  word-wrap: break-word;
+  border: 2px solid whitesmoke;
   background-color: #373737;
 }
 /* Calculator Grid */
@@ -161,9 +155,16 @@ body {
 button {
   height: 10rem;
   cursor: pointer;
-  background-color: #1b2ae4;
+  background-color: #1b2ae4aa;
   color: #e4d51b;
   font-size: 3rem;
+  transition: all 0.25s ease-in-out;
+}
+
+button:hover {
+  transform: scale(1.04);
+  background-color: #1b2ae4;
+  border: 2px solid whitesmoke;
 }
 
 /* Desktop Breakpoint */
@@ -187,7 +188,6 @@ button {
   .calculator {
     width: 60%;
     box-shadow: 0 2rem 4rem var(--shadow);
-    background-color: #201c29;
     margin: 1.5rem;
     grid-area: calculator;
   }
@@ -197,16 +197,31 @@ button {
     justify-content: flex-end;
   }
 
+  .results-display {
+    height: 19vh;
+    font-family: "Major Mono Display", monospace;
+    font-size: 6rem;
+    background-color: #373737;
+    border: 2px solid whitesmoke;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 2rem;
+    overflow: hidden;
+    white-space: no-wrap;
+    color: whitesmoke;
+  }
+
   .history {
-    color: black;
+    color: whitesmoke;
     display: flex;
     width: 60%;
     font-size: 3rem;
     padding: 1rem;
     text-align: center;
     margin: 10px;
-    /* padding: 10px; */
-    border: 1px solid #bbb;
+    word-wrap: break-word;
+    border: 2px solid whitesmoke;
     background-color: #373737;
   }
 
@@ -215,5 +230,6 @@ button {
     flex-direction: column;
     margin: 1.5rem;
     grid-area: list;
+    word-wrap: break-word;
   }
 }
